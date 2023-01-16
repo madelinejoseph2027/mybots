@@ -78,6 +78,5 @@ np.save("data/frontLegSensorValues", frontLegSensorValues)
 p.disconnect()
 
 
-
 #print(backLegSensorValues)
 #print(frontLegSensorValues)

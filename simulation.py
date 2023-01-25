@@ -12,7 +12,13 @@ from sensor import SENSOR
 from motor import MOTOR
 
 class SIMULATION:
-    def __init__(self):
+    def __init__(self, directOrGUI):
+            if directOrGUI == "DIRECT":
+                p.connect(p.DIRECT)
+
+            else:
+                p.connect(p.GUI)
+                
             self.world = WORLD()
             self.robot = ROBOT()
 
@@ -30,3 +36,7 @@ class SIMULATION:
         #SENSOR.Save_Values()
         #MOTOR.Save_Values()
         p.disconnect()
+        
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
+        

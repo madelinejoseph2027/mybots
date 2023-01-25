@@ -12,15 +12,17 @@ from sensor import SENSOR
 from motor import MOTOR
 
 class SIMULATION:
-    def __init__(self, directOrGUI):
-            if directOrGUI == "DIRECT":
+    def __init__(self, directOrGUI, solutionID):
+            self.directOrGUI = directOrGUI
+        
+            if self.directOrGUI == "DIRECT":
                 p.connect(p.DIRECT)
 
             else:
                 p.connect(p.GUI)
                 
             self.world = WORLD()
-            self.robot = ROBOT()
+            self.robot = ROBOT(solutionID)
 
     def Run(self):
         for i in range(c.iterations):
@@ -30,7 +32,8 @@ class SIMULATION:
             self.robot.Think()
             self.robot.Act(i)
             
-            time.sleep(c.sleep)
+            if self.directOrGUI == "GUI":
+                time.sleep(c.sleep)
                         
     def __del__(self):
         #SENSOR.Save_Values()

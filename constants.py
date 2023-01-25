@@ -14,3 +14,5 @@ frontLegPhaseOffset = 0
 maxForce = 100
 
 sleep = 1/120
+
+numberOfGenerations = 5

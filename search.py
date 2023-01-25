@@ -1,1 +1,1 @@
-#Importsimport osfrom hillclimber import HILL_CLIMBER hc = HILL_CLIMBER()hc.Evolve("DIRECT")hc.Show_Best()    
+#Importsimport osfrom parallelHillClimber import PARALLEL_HILL_CLIMBER phc = PARALLEL_HILL_CLIMBER()phc.Evolve("DIRECT")phc.Show_Best()    
